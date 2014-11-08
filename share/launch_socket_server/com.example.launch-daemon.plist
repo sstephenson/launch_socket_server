@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UserName</key>
+	<string>your-username-here</string>
+	<key>GroupName</key>
+	<string>staff</string>
+	<key>InitGroups</key>
+	<true/>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>com.example.launch-daemon</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/path/to/bin/launch_socket_server</string>
+		<string>Socket</string>
+		<string>/path/to/libexec/launch_socket_server/login_wrapper</string>
+		<string>/path/to/http-server</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>Sockets</key>
+	<dict>
+		<key>HTTPSocket</key>
+		<dict>
+			<key>SockNodeName</key>
+			<string>0.0.0.0</string>
+			<key>SockServiceName</key>
+			<string>http</string>
+		</dict>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>/path/to/log</string>
+	<key>StandardErrorPath</key>
+	<string>/path/to/log</string>
+</dict>
+</plist>

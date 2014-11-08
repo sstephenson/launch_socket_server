@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+read -r shell < <( dscl . -read "/Users/$(whoami)" UserShell )
+exec env PATH= "${shell#*: }" -l -c "$(printf "%q " "$@")"
